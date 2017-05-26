@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 import {IProduct} from './product';
 @Component({
     selector: 'pm-products',
-    templateUrl: 'app/products/product-list.component.html',
-    styleUrls:['app/products/product-list.component.css']
+    moduleId: module.id,
+    templateUrl: 'product-list.component.html',
+    styleUrls:['product-list.component.css']
 })
 export class ProductListComponent {
     pageTitle: string = 'Product List';
@@ -20,7 +21,7 @@ export class ProductListComponent {
             "releaseDate": "March 18, 2016",
             "description": "15 gallon capacity rolling garden cart",
             "price": 32.99,
-            "starRating": 4.2,
+            "starRating": 3,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
         },
         {
@@ -36,5 +37,12 @@ export class ProductListComponent {
     ];
     toggleImage(): void{
         this.showImage = !this.showImage;
+    }
+    ngOnInit(): void{
+        console.log("onInit")
+    }
+
+    onRatingClick(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
     }
 }

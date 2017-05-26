@@ -22,7 +22,7 @@ var ProductListComponent = (function () {
                 "releaseDate": "March 18, 2016",
                 "description": "15 gallon capacity rolling garden cart",
                 "price": 32.99,
-                "starRating": 4.2,
+                "starRating": 3,
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
             },
             {
@@ -40,13 +40,20 @@ var ProductListComponent = (function () {
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
+    ProductListComponent.prototype.ngOnInit = function () {
+        console.log("onInit");
+    };
+    ProductListComponent.prototype.onRatingClick = function (message) {
+        this.pageTitle = 'Product List: ' + message;
+    };
     return ProductListComponent;
 }());
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-products',
-        templateUrl: 'app/products/product-list.component.html',
-        styleUrls: ['app/products/product-list.component.css']
+        moduleId: module.id,
+        templateUrl: 'product-list.component.html',
+        styleUrls: ['product-list.component.css']
     })
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
