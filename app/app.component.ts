@@ -8,7 +8,7 @@ import {ProductService} from './products/product.service';
         <pm-products></pm-products>
     </div>
     `,
-    providers:[ProductService]
+    providers: [ ProductService ]
 })
 export class AppComponent {
     pageTitle: string = `Angular 2 App`;
