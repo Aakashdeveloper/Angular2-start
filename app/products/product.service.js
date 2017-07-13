@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var Observable_1 = require("rxjs/Observable");
+var observable_1 = require("rxjs/observable");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/map");
@@ -28,7 +28,7 @@ var ProductService = (function () {
     };
     ProductService.prototype.handleError = function (error) {
         console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server error');
+        return observable_1.Observable.throw(error.json().error || 'Server error');
     };
     return ProductService;
 }());
