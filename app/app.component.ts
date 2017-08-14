@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 
-
 @Component({
     selector: 'pm-app',
     template: `
@@ -21,6 +20,7 @@ import { Component } from '@angular/core';
      </div>
      `
 })
+
 export class AppComponent {
     pageTitle: string = `Angular2`;
 }
