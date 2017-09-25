@@ -30,8 +30,7 @@ ProductModule = __decorate([
             shared_module_1.SharedModule,
             router_1.RouterModule.forChild([
                 { path: 'products', component: product_list_component_1.ProductListComponent },
-                { path: 'product/:id',
-                    canActivate: [product_guard_service_1.ProductDetailGuard],
+                { path: 'product/:id?name=name',
                     component: product_detail_component_1.ProductDetailComponent },
             ])
         ],

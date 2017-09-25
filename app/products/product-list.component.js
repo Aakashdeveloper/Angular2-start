@@ -18,6 +18,8 @@ var ProductListComponent = (function () {
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.showImage = false;
+        this.grid = true;
+        this.list = false;
     }
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
@@ -29,6 +31,14 @@ var ProductListComponent = (function () {
     };
     ProductListComponent.prototype.onRatingClick = function (message) {
         this.pageTitle = 'Product List: ' + message;
+    };
+    ProductListComponent.prototype.showList = function () {
+        this.grid = false;
+        this.list = true;
+    };
+    ProductListComponent.prototype.showGrid = function () {
+        this.grid = true;
+        this.list = false;
     };
     return ProductListComponent;
 }());

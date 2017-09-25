@@ -19,7 +19,8 @@ var ProductDetailComponent = (function () {
     }
     ProductDetailComponent.prototype.ngOnInit = function () {
         var id = +this._route.snapshot.params['id'];
-        this.pageTitle += ": " + id;
+        var name = +this._route.snapshot.params['name'];
+        this.pageTitle += ": " + name;
     };
     ProductDetailComponent.prototype.onBack = function () {
         this._router.navigate(['/products']);

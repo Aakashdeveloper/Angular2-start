@@ -13,10 +13,12 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
+    grid:boolean=true;
+    list:boolean=false;
     listFilter: string;
     errorMessage: string;
 
-    products: IProduct[];
+    products: IProduct[]
 
     constructor(private _productService: ProductService) {
 
@@ -34,5 +36,14 @@ export class ProductListComponent implements OnInit {
 
     onRatingClick(message: string): void {
         this.pageTitle = 'Product List: ' + message;
+    }
+    showList(): void{
+        this.grid = false;
+        this.list =true;
+    }
+
+    showGrid():void{
+         this.grid = true;
+        this.list =false;
     }
 }
